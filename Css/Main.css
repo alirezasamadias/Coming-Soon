@@ -1,0 +1,74 @@
+/* Fonts */
+@font-face {
+    font-family: 'Entezar';
+    src: url('../Fonts/BZarBold_EditforPosterDesign.woff2') format('woff2'),
+        url('../Fonts/BZarBold_EditforPosterDesign.woff') format('woff'),
+        url('../Fonts/BZarBold_EditforPosterDesign.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Animations */
+@keyframes typing {
+    0% {
+        width: 0
+    }
+    30% , 45% {
+        width: 40%;
+    }
+    100% {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}
+
+/* Styles */
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    direction: rtl;
+    font-family: 'Entezar';
+}
+
+.container {
+    height: 100vh;
+    background: url(../Images/Banner.jpg) center;
+    background-size: cover;
+    background-color: dimgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-title {
+    transform: translateY(50px);
+    overflow: hidden;
+    border-left: 2px solid black;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+        typing 3.5s steps(10, end),
+        blink-caret .75s step-end infinite;
+    font-size: clamp(32px , 7vh , 60vh);
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width:768px){
+    .container {
+        background-position-x: 60%;
+    }
+}
